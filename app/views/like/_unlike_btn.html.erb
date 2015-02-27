@@ -1,0 +1,10 @@
+          <a id="like<%=votable.id%>" data-method="delete" data-remote="true" href="/like/Post/<%=votable.id%>" rel="nofollow">
+            <div class="unlike-btn">
+                <span>
+                    <i>
+
+                      You <% if votable.votes_for.up.size() > 1 %> <br> + <br> <%= (votable.votes_for.up.size() - 1) %> <% else %> liked this <% end %>
+                    </i>
+                </span>
+            </div>
+          </a>

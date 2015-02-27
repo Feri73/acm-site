@@ -1,0 +1,37 @@
+<%= bootstrap_form_for(@mail_message) do |f| %>
+  <% if @mail_message.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mail_message.errors.count, "error") %> prohibited this mail_message from being saved:</h2>
+
+      <ul>
+      <% @mail_message.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= f.text_field :subject%>
+    <!--<div class="form-group">-->
+
+      <!--<div class="col-sm-9">-->
+    <div id="user_mails_div">
+    <%= f.collection_select :user_ids, User.all, :id, :email, {}, {multiple: true, class: 'multi-select form-control'} %>
+    </div>
+    <label class="control-label col-sm-2" for=":send_to_all">Send to all</label>
+    <%= check_box_tag  :send_to_all %>
+    <%= f.text_field :OtherMails%>
+      <!--</div>-->
+    <!--</div>-->
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="post_summary">Body</label>
+
+      <div class="col-sm-10">
+        <%= f.cktext_area :body, :ckeditor => {:language => 'fa', :toolbar => 'mini'} %>
+      </div>
+    </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

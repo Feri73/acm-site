@@ -1,0 +1,32 @@
+<%= bootstrap_form_for(@magazine, html: {class: "text-#{I18n.locale.to_s}"}, layout: :horizontal, label_col: 'col-sm-2', control_col: 'col-sm-10') do |f| %>
+  <% if @magazine.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@magazine.errors.count, "error") %> prohibited this magazine from being saved:</h2>
+
+      <ul>
+      <% @magazine.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= f.number_field :volume %>
+    <%= f.text_field :title %>
+    <%= f.date_select :published_date %>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="post_summary">Content</label>
+
+      <div class="col-sm-10">
+        <%= f.cktext_area :content, :ckeditor => {:language => 'fa', :toolbar => 'mini'} %>
+      </div>
+    </div>
+    <%= f.file_field :avatar %>
+    <%= f.file_field :attachment %>
+    <div class="form-group">
+      <div class="col-sm-10 col-sm-offset-2 text-en">
+        <%= f.submit :class => "btn btn-primary text-#{I18n.locale.to_s}" %>
+      </div>
+    </div>
+<% end %>

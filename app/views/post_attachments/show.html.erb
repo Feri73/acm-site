@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @post_attachment.title %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @post_attachment.comment %>
+</p>
+
+<p>
+  <strong>Attachment:</strong>
+  <%= link_to "دریافت",  @post_attachment.attachment.url %>
+
+</p>
+
+<%= link_to 'Edit', edit_post_attachment_path(@post_attachment) %> |
+<%= link_to 'Back', post_attachments_path %>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    <% if @title %>
+        @title
+    <% else %>
+        ACM
+    <% end %>
+  </title>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="site-wrapper" class="">
+  <a class="toggle-nav btn btn-primary hidden-nav" id="menu-toggle"><i class="fa fa-bars"></i></a>
+
+  <div class='cover-wrapper'>
+    <div id="cover"></div>
+  </div>
+
+  <div id="site-menu" class="lang-<%= I18n.locale.to_s %> hide-nav">
+    <div class="account-info text-en">
+      <% if user_signed_in? %>
+          <img class="avatar"
+               src="
+                 <% if current_user.profile %>
+               <%= current_user.profile.avatar.thumb.url %>
+               <% else %>
+               /assets/profile.jpg
+               <% end %>">
+
+          <div class="email"><%= current_user.email %></div>
+          <div>
+            <a href="<%= destroy_user_session_path %>" data-method="delete" class="btn btn-danger"><%= t 'logout' %></a>
+          </div>
+      <% else %>
+          <%= link_to I18n.t('login'), new_user_session_path, :class => 'btn btn-primary' %>
+      <% end %>
+    </div>
+
+    <% if user_signed_in? and current_user.is_admin? %>
+        <div class="list-group">
+          <a href="<%= new_post_path %>" class="list-group-item">
+            <i class="fa fa-pencil-square-o fa-fw"></i>
+            <%= t 'write_new_post' %>
+          </a>
+          <a href="<%= groups_path %>" class="list-group-item">
+            <i class="fa fa-bank fa-fw"></i>
+            <%= t 'edit_groups' %>
+          </a>
+          <a href="<%= post_attachments_path %>" class="list-group-item">
+            <i class="fa fa-file fa-fw"></i>
+            <%= t 'attachments' %>
+          </a>
+          <a href="/comments_index" class="list-group-item">
+            <i class="fa fa-comments fa-fw"></i>
+            <%= t 'all_comments' %>
+          </a>
+          <a href="/mail_messages/new" class="list-group-item">
+            <i class="fa fa-send fa-fw"></i>
+            <%= t 'new_mail' %>
+          </a>
+          <a href="/blog/edit" class="list-group-item">
+            <i class="fa fa-gears fa-fw"></i>
+            <%= t 'change_blog_settings' %>
+          </a>
+        </div>
+    <% end %>
+
+    <% if user_signed_in? %>
+        <div class="list-group">
+          <%= link_to edit_profile_path(current_user.profile), :class => "list-group-item" do %>
+            <i class="fa fa-cog fa-fw"></i>
+تنظیم نمایه
+          <% end %>
+
+          <!--<a href="#" class="list-group-item">-->
+            <!--<i class="fa fa-bell fa-fw"></i>-->
+            <!--اتفاقات اخیر-->
+          <!--</a>-->
+
+
+
+          <!--<a href="#" class="list-group-item">-->
+            <!--<i class="fa fa-star fa-fw"></i>-->
+            <!--رویداد‌های مورد علاقه-->
+          <!--</a>-->
+
+        </div>
+    <% end %>
+
+
+    <div class="list-group">
+
+      <a href="/" class="list-group-item">
+        <i class="fa fa-home fa-fw"></i>
+        صفحه‌ی اصلی
+      </a>
+      <%= link_to magazines_path, :class => "list-group-item" do %>
+          <i class="fa fa-book fa-fw"></i>
+          مجله‌ی اف‌یک
+      <% end %>
+      <a href="acm/flats/officers" class="list-group-item">
+        <i class="fa fa-group fa-fw"></i>
+        گردانندگان
+      </a>
+      <a href="acm/flats/about" class="list-group-item">
+        <i class="fa fa-info-circle fa-fw"></i>
+        درباره‌ی شاخه
+      </a>
+
+
+    </div>
+
+    <div class="list-group">
+      <% for cat in Category.all %>
+          <a href="<%= category_path(cat) %>" class="list-group-item">
+            <i class="fa fa-circle-thin fa-fw"></i> <%= cat.name %>
+          </a>
+      <% end %>
+    </div>
+  </div>
+  <br>
+
+  <div>
+    <%= yield %>
+  </div>
+  <div class="push"></div>
+</div>
+<div id="footer">
+  <%= raw t 'footer_text' %>
+</div>
+<script language="javascript" type="text/javascript">
+    $(function () {
+        <% if notice %>
+        new PNotify({
+            text: '<%= notice %>',
+            type: 'warning',
+            styling: 'fontawesome',
+            icon: false
+            <% if I18n.locale.to_s == 'fa' %>, addclass: 'text-fa'
+            <%end %>
+        });
+        <% end %>
+        <% if alert %>
+        new PNotify({
+            text: '<%= alert %>',
+            type: 'danger',
+            styling: 'fontawesome',
+            icon: false
+            <% if I18n.locale.to_s == 'fa' %>, addclass: 'text-fa'
+            <%end %>
+        });
+        <% end %>
+    });
+</script>
+</body>
+</html>

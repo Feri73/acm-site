@@ -1,0 +1,36 @@
+<div class="row">
+  <div id="commentbox-<%= commentable.class.to_s %>-<%= commentable.id %>" class="comment-box">
+
+    <div class="col-md-10 comment-panel">
+      <!--<div class="comment-panel">-->
+      <div class="comments">
+        <% commentable.root_comments.each do |c| %>
+            <%= render :partial => "comment/single_comment", :locals => {:comment => c} %>
+        <% end %>
+      </div>
+
+      <% if user_signed_in? %>
+          <form class="comment-form" id="comment-form-<%= commentable.class.to_s %>-<%= commentable.id %>" accept-charset="UTF-8" action="/comment" method="post" data-remote="true">
+
+            <%= hidden_field_tag :model_name, "Post" %>
+            <%= hidden_field_tag :id, commentable.id %>
+
+
+            <div class="form-group">
+              <%= text_area_tag :body, nil, :class => "text-box" %>
+            <%= submit_tag "ارسال", :class => "submit-btn btn btn-primary" %>
+            <!--<div class="submit-box">-->
+
+              <!--</div>-->
+            </div>
+
+          </form>
+      <% end %>
+      <!--</div>-->
+    </div>
+    <div class="col-md-2 side-panel">
+      <i class="fa fa-comments fa-2x"></i>
+    </div>
+
+  </div>
+</div>

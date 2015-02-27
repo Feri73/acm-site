@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @mail_message.subject %>
+</p>
+
+<p>
+  <strong>OtherMails:</strong>
+  <%= @mail_message.OtherMails %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= raw @mail_message.body %>
+</p>
+
+
+
+
+<%= link_to 'Edit', edit_mail_message_path(@mail_message) %> |
+<%= link_to 'Back', mail_messages_path %>

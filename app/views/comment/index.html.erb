@@ -1,0 +1,22 @@
+<div class="post">
+
+  <div class="row">
+    <div id="commentbox-all" class="comment-box">
+
+      <div class="col-md-10 comment-panel">
+        <div class="comments">
+          <% Comment.all.order(:created_at).reverse.each do |c| %>
+              <%= render :partial => "comment/single_comment", :locals => {:comment => c, :admin_mode => true} %>
+          <% end %>
+
+        </div>
+      </div>
+      <div class="col-md-2 side-panel">
+        <i class="fa fa-comments fa-2x"></i>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+

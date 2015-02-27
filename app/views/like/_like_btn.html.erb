@@ -1,0 +1,11 @@
+
+  <a id="like<%=votable.id%>" data-method="post" data-remote="true" href="/like/Post/<%=votable.id%>" rel="nofollow">
+    <div  class="like-btn">
+
+
+            <span>
+                <i><%= votable.votes_for.up.size()%></i>
+                <i class="fa fa-thumbs-up "></i>
+            </span>
+    </div>
+  </a>

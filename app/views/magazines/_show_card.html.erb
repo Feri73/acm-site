@@ -1,0 +1,36 @@
+<div class="volume text-<%= I18n.locale.to_s %> <% if primary %> post-stick <% end %>">
+  <div class="side-btn">
+    <i class="fa fa-square fa-2x"></i>
+  </div>
+    <div class="panel-heading">
+    </div>
+    <div class="panel-body">
+
+      <div class="col-md-3">
+          <%= image_tag(magazine.avatar.url(:thumb), :class => "img-responsive", :style => "width: 200px;" )  %>
+      </div>
+          <div class="title">
+            <%= magazine.title %>
+          </div>
+          <div class="date">
+            <%= magazine.published_date.to_jalali.strftime("%d %B").persian_cleanup %> &middot;
+          </div>
+          <% if !is_card %>
+              <div class="text">
+                    <%= raw magazine.content %>
+              </div>
+              <% if magazine.attachment %>
+                  <div class="pdf">
+                        نسخه‌ی الکترونیکی:
+                    <%= link_to "دریافت", magazine.attachment.url %>
+                  </div>
+              <% else %>
+            می‌توانید برای دریافت این شماره، به دفتر شاخه‌ی ‌ای‌سی‌ام مراجعه کنید.
+              <% end %>
+          <% else %>
+              <div class="more">
+                <%= link_to I18n.t('more'), magazine %>
+              </div>
+          <% end %>
+      </div>
+</div>

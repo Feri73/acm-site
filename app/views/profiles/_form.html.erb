@@ -1,0 +1,21 @@
+<%= bootstrap_form_for(@profile, html: {class: "text-#{I18n.locale.to_s}"}, layout: :horizontal, label_col: 'col-sm-2', control_col: 'col-sm-10') do |f| %>
+    <% if @profile.errors.any? %>
+        <% @profile.errors.full_messages.each do |message| %>
+            <div class="alert alert-danger">
+              <%= message %>
+            </div>
+        <% end %>
+    <% end %>
+
+    <%= f.text_field :name %>
+    <%= f.text_field :last %>
+    <!--<%= f.check_box :gender %>-->
+    <%= f.date_select :birthday, {start_year: 1970, end_year: 2005} %>
+    <%= f.file_field :avatar %>
+    <div class="form-group">
+      <div class="col-sm-10 col-sm-offset-2 text-en">
+        <%= f.submit :class => "btn btn-primary text-#{I18n.locale.to_s}" %>
+        <%= link_to I18n.t('cancel'), posts_path, :class => "btn btn-default text-#{I18n.locale.to_s}" %>
+      </div>
+    </div>
+<% end %>

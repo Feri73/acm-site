@@ -1,0 +1,13 @@
+<div class="content">
+  <div class="text-<%= I18n.locale.to_s %> post-wrp">
+    <%= render  "magazines/show_card", :magazine => @magazine, :primary => true, :is_card => false%>
+    <% if @admin_mode %>
+        <div class="post-padded-container">
+          <%= link_to I18n.t('destory'), @magazine, method: :delete, :class => 'btn btn-danger', data: { confirm: 'Are you sure?' } %>
+          <%= link_to I18n.t('edit'), edit_magazine_path(@magazine), :class => 'btn btn-warning' %>
+
+        </div>
+    <% end %>
+  </div>
+</div>
+

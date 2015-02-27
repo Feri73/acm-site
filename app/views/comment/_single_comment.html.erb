@@ -1,0 +1,40 @@
+<div id="comment-<%=comment.id%>" class="single-comment">
+  <div class="comment-body row">
+        <div class="comment-text col-md-10">
+          <p>
+            <%= comment.body %>
+          </p>
+        </div>
+
+      <div class="comment-info col-md-2">
+        <img class="avatar"
+             src="
+                   <% user = User.find_by_id(comment.user_id) %>
+                   <% if user and user.profile %>
+                        <%= user.profile.avatar.thumb.url %>
+                   <% else %>
+                        /assets/profile.jpg
+                   <% end %>">
+      </div>
+
+  </div>
+  <div class="comment-footer">
+    <div class="name-box "><% if user and user.profile%> <%= user.profile.credentials %> <% else %> Unknown <% end %> </div>
+    <% if current_user and current_user.is_admin? or current_user == user %>
+    <div class="edit-box">
+      <a class="name-box" data-method="delete" data-remote="true" href="/comment/<%=comment.id%>" rel="nofollow"  data-confirm="'Are you sure?">
+        <i class="fa fa-times">
+          حذف
+        </i>
+      </a>
+    </div>
+    <% end %>
+    <div class="time-box ">
+      <%= persian_relative_time comment.created_at %>
+      <% if defined? admin_mode and admin_mode %>
+      <%= link_to "Source ", comment.commentable_type.singularize.classify.constantize.find_by_id(comment.commentable_id) %>
+      <% end %>
+    </div>
+  </div>
+</div>
+

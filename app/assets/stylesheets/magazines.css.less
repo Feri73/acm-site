@@ -1,0 +1,88 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Less here: http://lesscss.org/
+
+.shadow {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post-wrp {
+  width: 80%;
+  margin: 100px auto 0;
+  position: relative;
+  > .side-line {
+    width: 2px;
+    height: 100%;
+    background-color: #BBB;
+    position: absolute;
+    top: 30px;
+    right: 31px;
+    z-index: 1;
+  }
+}
+
+.volume {
+  background-color: #FFF;
+  padding: 20px 100px;
+  margin: 20px 0 10px;
+  color: #333;
+  position: relative;
+
+  > .side-btn {
+    position: absolute;
+    right: 0;
+    top: 24px;
+    width: 64px;
+    height: 64px;
+    background-color: #444;
+    color: #FFF;
+    border-radius: 50%;
+    padding: 19px 21px;
+    z-index: 2;
+  }
+
+  > .panel-body{
+    > .title {
+      font-size: 48px;
+      font-weight: 400;
+    }
+
+    > .date {
+      font-size: 20px;
+      color: #999;
+    }
+
+    > .text {
+      font-size: 28px;
+    }
+    > .pdf {
+      font-size: 24px;
+      color: #730E15;
+      display: block;
+//      border: solid;
+    }
+
+    > .more {
+      font-size: 24px;
+    }
+
+    > .tags {
+      font-size: 16px;
+      color: #777;
+    }
+  }
+}
+
+.page-name {
+  font-size: 72px;
+  text-align: center;
+  color: #333;
+  font-weight: 300;
+}
+
+.page-desc {
+  font-size: 24px;
+  font-weight: 200;
+  text-align: center;
+  color: #555;
+}

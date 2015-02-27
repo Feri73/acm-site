@@ -1,0 +1,51 @@
+<div class="content">
+  <div class="page-name">مجله‌ی اف‌یک</div>
+  <div class="page-desc">
+    فصل‌نامه‌ی شاخه‌ی دانشجویی‌ ای‌سی‌ام دانشگاه تهران
+  </div>
+<!--<h1>Listing magazines</h1>-->
+
+<!--<table>-->
+  <!--<thead>-->
+    <!--<tr>-->
+      <!--<th>Volume</th>-->
+      <!--<th>Title</th>-->
+      <!--<th>Published date</th>-->
+      <!--<th>Content</th>-->
+      <!--<th colspan="3"></th>-->
+    <!--</tr>-->
+  <!--</thead>-->
+
+  <!--<tbody>-->
+    <!--<% @magazines.each do |magazine| %>-->
+      <!--<tr>-->
+        <!--<td><%= magazine.volume %></td>-->
+        <!--<td><%= magazine.title %></td>-->
+        <!--<td><%= magazine.published_date %></td>-->
+        <!--<td><%= magazine.content %></td>-->
+        <!--<td><%= link_to 'Show', magazine %></td>-->
+        <!--<td><%= link_to 'Edit', edit_magazine_path(magazine) %></td>-->
+        <!--<td><%= link_to 'Destroy', magazine, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+      <!--</tr>-->
+    <!--<% end %>-->
+  <!--</tbody>-->
+<!--</table>-->
+<!--<div class="post-wrp">-->
+  <!--<div class="side-line">-->
+  <!--</div>-->
+
+<!--</div>-->
+
+<!--<br>-->
+
+<!--<%= link_to 'New Magazine', new_magazine_path %>-->
+
+  <div class="post-wrp">
+    <div class="side-line">
+    </div>
+    <% @magazines.each_with_index do |magazine,i| %>
+        <%= render partial: "magazines/show_card", :locals => {:magazine => magazine, :primary => (i==0), :is_card => true } %>
+    <% end %>
+
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="content">
+  <div class="text-<%= I18n.locale.to_s %> post-wrp">
+    <% @posts.each do |post| %>
+        <%= render 'posts/post', post: post, summary: true %>
+    <% end %>
+
+    <% if current_user and current_user.is_admin? %>
+        <div class="post-padded-container">
+          <%= link_to I18n.t('edit'), edit_category_path(@category), :class => 'btn btn-primary' %>
+          <%= link_to I18n.t('cancel'), categories_path, :class => 'btn btn-default' %>
+        </div>
+    <% end %>
+  </div>
+</div>
+

@@ -1,0 +1,10 @@
+<% if @error %>
+alert("<%=@error%>");
+<% else %>
+var e = $("#like<%=@votable.id%>");
+var w = e.parent();
+//alert("w " + w.html());
+e.attr("data-method","post");
+e.attr("class","like-btn");
+w.html("<%= j render :partial => "like/like_btn", :locals => {:votable => @votable} %>");
+<% end %>
