@@ -13,14 +13,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div id="site-wrapper" class="">
-  <a class="toggle-nav btn btn-primary hidden-nav" id="menu-toggle"><i class="fa fa-bars"></i></a>
+<div id="site-wrapper" class="show-nav">
+  <a class="toggle-nav btn btn-primary show-nav" id="menu-toggle"><i class="fa fa-bars"></i></a>
 
   <div class='cover-wrapper'>
     <div id="cover"></div>
   </div>
 
-  <div id="site-menu" class="lang-<%= I18n.locale.to_s %> hide-nav">
+  <div id="site-menu" class="lang-<%= I18n.locale.to_s %> show-nav">
     <div class="account-info text-en">
       <% if user_signed_in? %>
           <img class="avatar"
@@ -71,21 +71,22 @@
 
     <% if user_signed_in? %>
         <div class="list-group">
-          <%= link_to edit_profile_path(current_user.profile), :class => "list-group-item" do %>
-            <i class="fa fa-cog fa-fw"></i>
-تنظیم نمایه
+          <% if current_user.profile %>
+              <%= link_to edit_profile_path(current_user.profile), :class => "list-group-item" do %>
+                  <i class="fa fa-cog fa-fw"></i>
+                  تنظیم نمایه
+              <% end %>
           <% end %>
 
           <!--<a href="#" class="list-group-item">-->
-            <!--<i class="fa fa-bell fa-fw"></i>-->
-            <!--اتفاقات اخیر-->
+          <!--<i class="fa fa-bell fa-fw"></i>-->
+          <!--اتفاقات اخیر-->
           <!--</a>-->
 
 
-
           <!--<a href="#" class="list-group-item">-->
-            <!--<i class="fa fa-star fa-fw"></i>-->
-            <!--رویداد‌های مورد علاقه-->
+          <!--<i class="fa fa-star fa-fw"></i>-->
+          <!--رویداد‌های مورد علاقه-->
           <!--</a>-->
 
         </div>
@@ -127,11 +128,13 @@
   <div>
     <%= yield %>
   </div>
+
   <div class="push"></div>
 </div>
 <div id="footer">
   <%= raw t 'footer_text' %>
 </div>
+
 <script language="javascript" type="text/javascript">
     $(function () {
         <% if notice %>

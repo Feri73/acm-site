@@ -1,35 +1,45 @@
-<div class="post text-<%= I18n.locale.to_s %>">
-  <div class="side-btn">
-    <i class="fa fa-dot-circle-o fa-2x"></i>
+<div class="post">
+  <div class="image-wrapper">
+    <div class="post-image">
 
-  </div>
-  <div class="side-btn">
-    <i class="fa fa-dot-circle-o fa-2x"></i>
     </div>
-
-  <%= render partial: 'like/vote_btn', :locals => {:votable => post} %>
-
-  <div class="title">
-    <%= post.title %>
   </div>
-  <div class="date">
-    <%= post.publishDate.to_jalali.strftime("%d %B").persian_cleanup %> &middot; <%= post.category.name %>
-  </div>
-  <div class="text">
-    <% if summary %>
-        <%= raw post.summary %>
-    <% else %>
-        <%= raw post.text %>
-        <%= render :partial => "comment/comment_box", :locals => {:commentable => post} %>
-    <% end %>
-  </div>
-  <% if summary %>
-      <div class="more">
-        <%= link_to I18n.t('more'), post %>
+  <div class="content-wrapper text-<%= I18n.locale.to_s %>">
+    <div class="content-colorbar"></div>
+    <div class="pad">
+      <div class="title ">
+        <%= post.title %>
       </div>
-  <% end %>
-  <div class="tags">
-    <%= post.tags %>
+      <div class="date">
+        <%= post.publishDate.to_jalali.strftime("%d %B").persian_cleanup %> &middot; <%= post.category.name %>
+      </div>
+    </div>
+    <hr>
+    <div class="pad">
+      <div class="text">
+        <% if summary %>
+            <%= raw post.summary %>
+        <% else %>
+            <%= raw post.text %>
+            <%= render :partial => 'comment/comment_box', :locals => {:commentable => post} %>
+        <% end %>
+      </div>
+    </div>
+    <div class="pad">
+      <% if summary %>
+          <div class="more">
+            <%= link_to I18n.t('more'), post %>
+          </div>
+      <% end %>
+      <div class="tags">
+        <%= post.tags %>
+      </div>
+    </div>
   </div>
-</div>
+  <div class="like-wrapper">
+      <%= render partial: 'like/vote_btn', :locals => {:votable => post} %>
+  </div>
 
+
+
+</div>

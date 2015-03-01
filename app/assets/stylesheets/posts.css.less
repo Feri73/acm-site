@@ -1,93 +1,121 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Less here: http://lesscss.org/
+@import "color-palette";
 
-.shadow {
+.shadowed() {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.post-wrp {
-  width: 80%;
-  margin: 100px auto 0;
-  position: relative;
-  > .side-line {
-    width: 2px;
-    height: 100%;
-    background-color: #BBB;
-    position: absolute;
-    top: 30px;
-    right: 31px;
-    z-index: 1;
-  }
+.pad {
+  padding: 20px;
 }
 
 .post {
-  background-color: #FFF;
-  padding: 20px 100px;
-  margin: 20px 0 100px;
-  color: #333;
-  position: relative;
+  display: table;
+  width: 100%;
+  margin: 20px 0;
 
-  > .side-btn {
-    position: absolute;
-    right: 0;
-    top: 24px;
-    width: 64px;
-    height: 64px;
-    background-color: #444;
-    color: #FFF;
-    border-radius: 50%;
-    padding: 19px 21px;
-    z-index: 2;
-  }
-  .vote-btn{
-    position: absolute;
-    right: 0;
-    top: 90px;
-    width: 64px;
-    height: 64px;
-    background-color: #4869c3;
-    color: #FFF;
-    padding: 12px 23px;
-    z-index: 2;
-  }
-  > div > a {
-
-    >  .like-btn {
-      .vote-btn;
-    }
-    > .like-btn:hover {
-      padding: 19px 21px;
-    }
-    > .unlike-btn {
-      .vote-btn;
-      padding: 3px 20px;
+  .like-wrapper {
+    display: table-cell;
+    vertical-align: top;
+    padding-left: 10px;
+    .like-btn {
+      .shadowed();
+      position: relative;
+      width: 64px;
+      height: 64px;
+      background-color: #1ABC9C;
+      padding: 5px;
+      line-height: 4;
       text-align: center;
+      z-index: 2;
+      color: @white;
+    }
+    .liked-num {
+      position: relative;
+      background-color: #787878;
+      width: 64px;
+      height: 20px;
+      color: @white;
+      text-align: center;
+      display: block;
+    }
+    //    .like-btn:hover {
+    //      padding: 19px 21px;
+    //    }
+    .unlike-btn {
+      text-align: center;
+      .shadowed();
+      position: relative;
+      width: 64px;
+      height: 64px;
+      background-color: #1ABC9C;
+      padding: 5px;
+      z-index: 2;
+      line-height: 4;
+      color: @white;
+    }
+    .liked-text {
+      background-color: #EC7063;
+      text-align: center;
+      width: 64px;
+      height: auto;
+      padding: 5px;
+      position: relative;
+      color: @white;
 
     }
-    > .unlike-btn:hover {
-      padding: 19px 21px;
+  }
+  .image-wrapper {
+    display: table-cell;
+    vertical-align: top;
+    padding-right: 20px;
+      background-color: @gray-300;
+      border-radius: 10px 0 0 10px;
+    .post-image {
+      width: 222px;
     }
   }
-  > .title {
-    font-size: 48px;
+
+  .content-wrapper {
+    .shadowed();
+    width: 100%;
+    display: table-cell;
+    background-color: #FFF;
+    color: #333;
+    border-radius: 2px;
+    hr {
+      margin: 0;
+    }
+    img {
+      width: 500px;
+    }
+  }
+  .content-colorbar {
+    height: 5px;
+    background-color: #1ABC9C;
+    width: 100%
+  }
+  .title {
+    font-size: 23px;
     font-weight: 400;
   }
 
-  > .date {
-    font-size: 20px;
+  .date {
+    font-size: 15px;
     color: #999;
   }
 
-  > .text {
-    font-size: 28px;
+  .text {
+    font-size: 20px;
   }
 
-  > .more {
-    font-size: 24px;
+  .more {
+    font-size: 20px;
   }
 
-  > .tags {
+  .tags {
     font-size: 16px;
     color: #777;
   }

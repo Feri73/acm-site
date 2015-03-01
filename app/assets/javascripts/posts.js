@@ -35,7 +35,8 @@ $(function () {
 //    });
     $(document).on("mouseenter", ".unlike-btn",function (event) {
         $(this).find("span:first").hide();
-        $(this).append("<span><i class='fa fa-times fa-2x'></i></span>");
+        //$(this).append("<span><i class='fa fa-times fa-2x'></i></span>");
+        $(this).append("<span><i class='fa fa-thumbs-down fa-2x'></i></span>");
     });
     $(document).on("mouseleave", ".unlike-btn",function (event) {
         $(this).find("span:first").show();

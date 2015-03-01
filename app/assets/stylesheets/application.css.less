@@ -18,9 +18,10 @@
  *= require_tree .
  *= require_self
  */
+@import "color-palette";
 
 html, body {
-  font-family: "Bernino-Sans", "Mitra";
+  font-family: "Bernino-Sans", "BYekan";
   height: 100%;
 }
 
@@ -57,7 +58,7 @@ html, body {
 .cover-wrapper {
   position: relative;
   width: 100%;
-  height: 300px;
+  height: 280px;
   z-index: -1;
   top: 0;
   left: 0;
@@ -94,10 +95,12 @@ html, body {
 }
 
 .content {
-  background-color: #FFF;
-  padding: 20px;
+  background-color: #F5F5F5;
+//  padding: 20px;
   z-index: 0;
+  height: auto;
 }
+
 
 #menu-toggle {
   position: fixed;

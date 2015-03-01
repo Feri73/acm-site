@@ -83,4 +83,4 @@ gem 'mini_magick'
 #Delayed Job
 gem 'delayed_job_active_record'
 
-ruby '2.1.1'
+ruby '2.1.2'

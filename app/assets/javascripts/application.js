@@ -27,6 +27,5 @@ $(function () {
         $('#site-menu').toggleClass('hide-nav');
         $('#menu-toggle').toggleClass('hidden-nav');
     });
-
 });
 

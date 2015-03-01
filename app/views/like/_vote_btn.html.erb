@@ -1,17 +1,18 @@
 <% if user_signed_in? %>
     <div>
       <% if current_user.voted_for? votable %>
-           <%= render :partial => "like/unlike_btn", :locals => {:votable => votable} %>
+          <%= render :partial => "like/unlike_btn", :locals => {:votable => votable} %>
       <% else %>
           <%= render :partial => "like/like_btn", :locals => {:votable => votable} %>
       <% end %>
     </div>
 <% else %>
-
-      <div  class="vote-btn">
-            <span>
-                <i><%= votable.votes_for.up.size()%></i>
-                <i class="fa fa-thumbs-up "></i>
-            </span>
-      </div>
+    <div class="like-btn">
+      <span>
+        <i class="fa fa-thumbs-up fa-2x"></i>
+      </span>
+    </div>
+    <div class="liked-num">
+      <%= votable.votes_for.up.size() %>
+    </div>
 <% end %>

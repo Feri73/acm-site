@@ -1,10 +1,19 @@
-          <a id="like<%=votable.id%>" data-method="delete" data-remote="true" href="/like/Post/<%=votable.id%>" rel="nofollow">
-            <div class="unlike-btn">
-                <span>
-                    <i>
+<a id="like<%= votable.id %>" data-method="delete" data-remote="true" href="/like/Post/<%= votable.id %>" rel="nofollow">
+  <div class="unlike-btn">
+    <span>
+      <i class='fa fa-thumbs-down fa-2x'></i>
+    </span>
+  </div>
+</a>
+<div class="liked-text">
+  You
+  <% if votable.votes_for.up.size() > 1 %> <br> and <br> <%= (votable.votes_for.up.size() - 1)  %>
+  <% end %>
+  <br>
+  liked this
 
-                      You <% if votable.votes_for.up.size() > 1 %> <br> + <br> <%= (votable.votes_for.up.size() - 1) %> <% else %> liked this <% end %>
-                    </i>
-                </span>
-            </div>
-          </a>
+</div>
+<div class="liked-num">
+  <%= votable.votes_for.up.size() %>
+</div>
+
