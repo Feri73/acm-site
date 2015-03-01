@@ -96,35 +96,38 @@ html, body {
 
 .content {
   background-color: #F5F5F5;
-//  padding: 20px;
+  //  padding: 20px;
   z-index: 0;
   height: auto;
 }
 
-
 #menu-toggle {
   position: fixed;
   top: 20px;
-  left: 320px;
+  left: 300px;
   z-index: 1010;
   transition: left 0.25s;
+  border-radius: 0 2px 2px 0;
   &.hidden-nav {
-    left: 20px;
+    left: 0px;
   }
 }
 
 #site-menu {
   position: fixed;
   width: 300px;
-  min-height: 100%;
   left: 0;
+  bottom: 0;
   top: 0;
   background: #444;
   padding: 20px;
-  overflow: hidden;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: #FFF;
   transition: left 0.25s;
+  &:hover {
+    overflow-y: auto;
+  }
+
   &.hide-nav {
     left: -300px;
   }
@@ -161,7 +164,7 @@ html, body {
     > .list-group-item {
       color: #FFF;
       background-color: #5E5E5E;
-      font-size: 18px;
+      font-size: 14px;
       border: none;
       &:hover,
       &:focus {

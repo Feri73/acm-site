@@ -15,7 +15,6 @@
   display: table;
   width: 100%;
   margin: 20px 0;
-
   .like-wrapper {
     display: table-cell;
     vertical-align: top;
@@ -70,11 +69,13 @@
   .image-wrapper {
     display: table-cell;
     vertical-align: top;
-    padding-right: 20px;
-      background-color: @gray-300;
-      border-radius: 10px 0 0 10px;
+//    background-color: @gray-300;
+    border-radius: 10px 0 0 10px;
     .post-image {
-      width: 222px;
+      img {
+        width: 222px;
+        border-radius: 10px 0 0 10px;
+      }
     }
   }
 
@@ -98,21 +99,21 @@
     width: 100%
   }
   .title {
-    font-size: 23px;
+    font-size: 18px;
     font-weight: 400;
   }
 
   .date {
-    font-size: 15px;
+    font-size: 12px;
     color: #999;
   }
 
   .text {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .more {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .tags {
