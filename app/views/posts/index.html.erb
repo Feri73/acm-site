@@ -2,8 +2,6 @@
   <div class="col-md-10 col-md-offset-1 col-sm-8 col-sm-offset-2 col-xs-12">
     <!--<div class="blog-name">< %= Blog.last.name %></div>-->
     <!--<div class="blog-desc">< %= Blog.last.desc %></div>-->
-      <!--<div class="side-line">-->
-      <!--</div>-->
       <% @posts.order(:publishDate).each do |post| %>
           <%= render 'posts/post', post: post, summary: true %>
       <% end %>

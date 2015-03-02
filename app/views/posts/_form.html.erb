@@ -9,6 +9,7 @@
 
     <%= f.text_field :title %>
     <%= f.collection_select :category_id, Category.all, :id, :name %>
+    <%= f.text_field :image_url %>
     <div class="form-group">
       <label class="control-label col-sm-2" for="post_summary">Summary</label>
 

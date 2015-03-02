@@ -1,9 +1,9 @@
-
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span></button>
         <div class="title ">
           <%= post.title %>
         </div>
@@ -12,7 +12,7 @@
         </div>
       </div>
       <div class="modal-body">
-        <%= image_tag 'back2.jpg', alt: 'a face that is unnervingly happy'%>
+        <%= image_tag post.image_url %>
       </div>
       <div class="modal-footer">
         <% if summary %>
@@ -26,9 +26,11 @@
 <div class="post">
   <div class="image-wrapper">
     <div class="post-image">
-      <a  data-toggle="modal" data-target="#myModal">
-        <%= image_tag 'back2.jpg', alt: 'a face that is unnervingly happy'%>
-      </a>
+      <% if post.image_url %>
+          <a data-toggle="modal" data-target="#myModal">
+            <%= image_tag post.image_url %>
+          </a>
+      <% end %>
     </div>
   </div>
   <div class="content-wrapper text-<%= I18n.locale.to_s %>">
@@ -42,31 +44,32 @@
       </div>
     </div>
     <hr>
-    <div class="pad">
-      <div class="text">
-        <% if summary %>
-            <%= raw post.summary %>
-        <% else %>
-            <%= raw post.text %>
-            <%= render :partial => 'comment/comment_box', :locals => {:commentable => post} %>
-        <% end %>
-      </div>
-    </div>
-    <div class="pad">
+
+    <div class="text">
       <% if summary %>
-          <div class="more">
-            <%= link_to I18n.t('more'), post %>
+          <div class="pad">
+            <%= raw post.summary %>
+            <div class="more">
+              <%= link_to I18n.t('more'), post %>
+            </div>
           </div>
+      <% else %>
+          <div class="pad">
+            <%= raw post.text %>
+          </div>
+          <hr>
       <% end %>
       <div class="tags">
         <%= post.tags %>
       </div>
     </div>
+    <% if !summary %>
+        <%= render :partial => 'comment/comment_box', :locals => {:commentable => post} %>
+    <% end %>
   </div>
   <div class="like-wrapper">
-      <%= render partial: 'like/vote_btn', :locals => {:votable => post} %>
+    <%= render partial: 'like/vote_btn', :locals => {:votable => post} %>
   </div>
-
 
 
 </div>

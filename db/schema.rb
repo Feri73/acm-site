@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140926210755) do
+ActiveRecord::Schema.define(version: 20150302095912) do
 
   create_table "blogs", force: true do |t|
     t.string   "name"
@@ -118,6 +118,7 @@ ActiveRecord::Schema.define(version: 20140926210755) do
     t.datetime "updated_at"
     t.string   "summary"
     t.integer  "category_id"
+    t.string   "image_url"
   end
 
   create_table "profiles", force: true do |t|
