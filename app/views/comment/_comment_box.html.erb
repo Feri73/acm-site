@@ -12,9 +12,9 @@
           </div>
         </form>
     <% end %>
-    <div class="col-md-2 side-panel">
-      <i class="fa fa-comments fa-2x"></i>
-    </div>
+    <!--<div class="col-md-2 side-panel">-->
+      <!--<i class="fa fa-comments fa-2x"></i>-->
+    <!--</div>-->
     <div class="comments">
       <% commentable.root_comments.each do |c| %>
           <%= render :partial => 'comment/single_comment', :locals => {:comment => c} %>
