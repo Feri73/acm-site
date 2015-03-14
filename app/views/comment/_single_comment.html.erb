@@ -12,7 +12,7 @@
                    <%# if user and user.profile %>
                         <%#= user.profile.avatar.thumb.url %>
                    <%# else %>
-                        /assets/profile.jpg
+                        <%=asset_path 'profile.jpg'%>
                    <%# end %>">
     </div>
   </div>
