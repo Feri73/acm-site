@@ -45,7 +45,7 @@ class CommentController < ApplicationController
         c = Comment.find_by_id(params[:id])
         if c
           #if c.user_id == current_user.id
-          if c.has_role("admin")
+          if cuurent_user.is_admin?
             @commen_id = c.id
             c.delete
           else
