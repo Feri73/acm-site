@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   resources :groups
 
-  get 'flats/:name' => 'flat#show'
+  get 'flats/:name' => 'flat#show', :as => :show_flat
 
 
   resources :categories
