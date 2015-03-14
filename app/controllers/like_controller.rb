@@ -13,7 +13,7 @@ class LikeController < ApplicationController
           @votable = cl.find_by_id(params[:id])
           if @votable
             begin
-              #@votable.liked_by current_user
+              @votable.liked_by nil #current_user
             rescue
                 @error ="err_cant_like"
             end
@@ -41,7 +41,7 @@ class LikeController < ApplicationController
           @votable = cl.find_by_id(params[:id])
           if @votable
             begin
-              #@votable.unliked_by current_user
+              @votable.unliked_by nil #current_user
             rescue
               @error ="err_cant_unlike"
             end
