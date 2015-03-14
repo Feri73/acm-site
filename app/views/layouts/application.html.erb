@@ -55,7 +55,7 @@
             <i class="fa fa-file fa-fw"></i>
             <%= t 'attachments' %>
           </a>
-          <%= link_to controller: "comments", action: "index" , :class => "list-group-item" do %>
+          <%= link_to controller: "comment", action: "index" , :class => "list-group-item" do %>
             <i class="fa fa-comments fa-fw"></i>
             <%= t 'all_comments' %>
           <%end%>
@@ -115,11 +115,16 @@
           مجله‌ی اف‌یک
       <% end %>
 
-      <a href="<%= show_flat_path %>/officers" class="list-group-item">
+      <%= link_to controller:"flat",action:"show", :class => "list-group-item" do %>
+          <i class="fa fa-group fa-fw"></i>
+          گردانندگان
+      <% end %>
+
+      <!--<a href="<%#= show_flat_path %>/officers" class="list-group-item">
         <i class="fa fa-group fa-fw"></i>
         گردانندگان
-      </a>
-      <a href="<%= show_flat_path %>/about" class="list-group-item">
+      </a>-->
+      <a href="<%#= show_flat_path %>/about" class="list-group-item">
         <i class="fa fa-info-circle fa-fw"></i>
         درباره‌ی شاخه
       </a>
