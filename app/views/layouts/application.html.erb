@@ -29,7 +29,7 @@
                  <% if current_user.profile %>
                <%= current_user.profile.avatar.thumb.url %>
                <% else %>
-               /assets/profile.jpg
+                <%=asset_path 'profile.jpg'%>
                <% end %>">
 
           <div class="email"><%= current_user.email %></div>
