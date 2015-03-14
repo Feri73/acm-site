@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   delete 'like/:model_name/:id' => 'like#destroy', :as => :unlike_path
 
 
-  get 'comments_index' => 'comment#index', :as => :comments_path
+  get 'comments_index' => 'comment#index', :as => :comments
   post 'comment' => 'comment#create', :as => :comment_create_path
   delete 'comment/:id' => 'comment#destroy', :as => :comment_destory_path
 
