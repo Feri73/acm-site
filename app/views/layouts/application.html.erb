@@ -55,10 +55,10 @@
             <i class="fa fa-file fa-fw"></i>
             <%= t 'attachments' %>
           </a>
-          <!--<%#= link_to :body=>t('all_comments'),:url_options=>{:controller=>"comment", :action=>"index"} , :html_options=>{:class => "list-group-item"} do %>
+          <%= link_to t('all_comments'),{:controller=>"comment", :action=>"index"} , {:class => "list-group-item"} do %>
             <i class="fa fa-comments fa-fw"></i>
-            <%#= t 'all_comments' %>
-          <%#end%>-->
+            Asdasdasdasda
+          <%end%>
           <!--<a href="/comments_index" class="list-group-item">
             <i class="fa fa-comments fa-fw"></i>
             <%= t 'all_comments' %>
@@ -115,10 +115,10 @@
           مجله‌ی اف‌یک
       <% end %>
 
-      <%= link_to nil,"flat#show", :class => "list-group-item" do %>
+      <%#= link_to nil,"flat#show", :class => "list-group-item" do %>
           گردانندگان
           <i class="fa fa-group fa-fw"></i>
-      <%end %>
+      <%#end %>
 
       <!--<a href="<%#= show_flat_path %>/officers" class="list-group-item">
         <i class="fa fa-group fa-fw"></i>
