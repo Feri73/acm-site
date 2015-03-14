@@ -64,9 +64,10 @@
             <%= t 'new_mail' %>
           </a>
           <!--<a href="/blog/edit" class="list-group-item">-->
-          <%= link_to 'change_blog_settings' controller:"blogs", action:"edit", :class => "fa fa-gears fa-fw" %>
-            <!--<i class="fa fa-gears fa-fw"></i>-->
-            <!--<%= t 'change_blog_settings' %>-->
+          <%= link_to controller:"blogs", action:"edit", :class => "fa fa-gears fa-fw" do %>
+            <i class="fa fa-gears fa-fw"></i>
+            <%= t 'change_blog_settings' %>
+          <%end%>
           <!--</a>-->
         </div>
     <% end %>
