@@ -1,7 +1,7 @@
 <div id="commentbox-<%= commentable.class.to_s %>-<%= commentable.id %>" class="comment-box">
   <div class="comment-panel">
     <%# if user_signed_in? %>
-        <form class="comment-form" id="comment-form-<%= commentable.class.to_s %>-<%= commentable.id %>" accept-charset="UTF-8" action="<%=create_comment%>" method="post" data-remote="true">
+        <form class="comment-form" id="comment-form-<%= commentable.class.to_s %>-<%= commentable.id %>" accept-charset="UTF-8" action="<%=create_comment_path%>" method="post" data-remote="true">
           <%= hidden_field_tag :model_name, 'Post' %>
           <%= hidden_field_tag :id, commentable.id %>
           <div class="form-group">
