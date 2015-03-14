@@ -23,9 +23,9 @@
       <%# else %> مهمان
       <%# end %>
     </div>
-    <% if current_user and current_user.is_admin? or current_user == user %>
+    <% if current_user and current_user.is_admin?# or current_user == user %>
         <div class="edit-box">
-          <a class="name-box" data-method="delete" data-remote="true" href="/comment/<%= comment.id %>" rel="nofollow" data-confirm="'Are you sure?">
+          <a class="name-box" data-method="delete" data-remote="true" href="<%=destroy_comment_path(:id=> comment.id) %>" rel="nofollow" data-confirm="'Are you sure?">
             <i class="fa fa-times">
               حذف
             </i>
