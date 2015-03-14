@@ -55,9 +55,9 @@
             <i class="fa fa-file fa-fw"></i>
             <%= t 'attachments' %>
           </a>
-          <%= link_to ("ASDASDASDA", {controller: "comment", action: "index"} , {:class => "list-group-item"}) do %>
+          <%= link_to {:controller=>"comment", :action=>"index"} , {:class => "list-group-item"} do %>
             <i class="fa fa-comments fa-fw"></i>
-            <%#= t 'all_comments' %>
+            <%= t 'all_comments' %>
           <%end%>
           <!--<a href="/comments_index" class="list-group-item">
             <i class="fa fa-comments fa-fw"></i>
