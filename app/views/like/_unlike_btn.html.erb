@@ -1,4 +1,4 @@
-<a id="like<%= votable.id %>" data-method="delete" data-remote="true" href="<%=like_post_path(:model_name=>'Post')%>/<%= votable.id %>" rel="nofollow">
+<a id="like<%= votable.id %>" data-method="delete" data-remote="true" href="<%=like_post_path(:model_name=>'Post',:id=>votable.id)%>" rel="nofollow">
   <div class="unlike-btn">
     <span>
       <i class='fa fa-thumbs-down fa-2x'></i>
