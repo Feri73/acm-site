@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   has_one :profile
 
   def active_for_authentication?
-      super && !self.is_admin?
+      super && self.is_admin?
   end
 
 
