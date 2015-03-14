@@ -1,6 +1,6 @@
 <div id="commentbox-<%= commentable.class.to_s %>-<%= commentable.id %>" class="comment-box">
   <div class="comment-panel">
-    <% if user_signed_in? %>
+    <%# if user_signed_in? %>
         <form class="comment-form" id="comment-form-<%= commentable.class.to_s %>-<%= commentable.id %>" accept-charset="UTF-8" action="/comment" method="post" data-remote="true">
           <%= hidden_field_tag :model_name, 'Post' %>
           <%= hidden_field_tag :id, commentable.id %>
@@ -11,7 +11,7 @@
             </div>
           </div>
         </form>
-    <% end %>
+    <%# end %>
     <!--<div class="col-md-2 side-panel">-->
       <!--<i class="fa fa-comments fa-2x"></i>-->
     <!--</div>-->

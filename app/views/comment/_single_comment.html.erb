@@ -8,20 +8,20 @@
     <div class="comment-info col-md-2">
       <img class="avatar"
            src="
-                   <% user = User.find_by_id(comment.user_id) %>
-                   <% if user and user.profile %>
-                        <%= user.profile.avatar.thumb.url %>
-                   <% else %>
+                   <%# user = User.find_by_id(comment.user_id) %>
+                   <%# if user and user.profile %>
+                        <%#= user.profile.avatar.thumb.url %>
+                   <%# else %>
                         /assets/profile.jpg
-                   <% end %>">
+                   <%# end %>">
     </div>
   </div>
   <div class="comment-footer">
     <div class="name-box">
-      <% if user and user.profile %>
-          <%= user.profile.name + ' ' + user.profile.last%>
-      <% else %> Unknown
-      <% end %>
+      <%# if user and user.profile %>
+          <%#= user.profile.name + ' ' + user.profile.last%>
+      <%# else %> مهمان
+      <%# end %>
     </div>
     <% if current_user and current_user.is_admin? or current_user == user %>
         <div class="edit-box">
