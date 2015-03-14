@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
 
   get 'comments_index' => 'comment#index', :as => :comments
-  post 'comment' => 'comment#create', :as => :comment_create_path
+  post 'comment' => 'comment#create', :as => :create_comment
   delete 'comment/:id' => 'comment#destroy', :as => :comment_destory_path
 
 
