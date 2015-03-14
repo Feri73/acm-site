@@ -17,6 +17,10 @@ class User < ActiveRecord::Base
   has_many :mail_messages, :through => :user_mail_messages
   has_one :profile
 
+  def active_for_authentication?
+      super && !self.is_admin?
+  end
+
 
   def self.find_for_google_oauth2(access_token, signed_in_resource=nil)
     data = access_token.info
