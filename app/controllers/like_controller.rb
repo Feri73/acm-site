@@ -14,7 +14,7 @@ class LikeController < ApplicationController
           if @votable
             begin
               voter = User.find_by_email("default@votable.com")
-              @votable.liked_by voter
+              @votable.liked_by voter, :duplicate => true
             rescue
                 @error ="err_cant_like"
             end
@@ -43,7 +43,7 @@ class LikeController < ApplicationController
           if @votable
             begin
               voter = User.find_by_email("default@votable.com")
-              @votable.unliked_by voter
+              @votable.unliked_by voter, :duplicate => true
             rescue
               @error ="err_cant_unlike"
             end
