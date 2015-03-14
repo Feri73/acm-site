@@ -59,10 +59,14 @@
             <i class="fa fa-comments fa-fw"></i>
             <%= t 'all_comments' %>
           </a>
-          <a href="/mail_messages/new" class="list-group-item">
+          <%= link_to new_mail_message_path, :class => "list-group-item" do %>
             <i class="fa fa-send fa-fw"></i>
             <%= t 'new_mail' %>
-          </a>
+          <%end%>
+          <!--<a href="/mail_messages/new" class="list-group-item">
+            <i class="fa fa-send fa-fw"></i>
+            <%= t 'new_mail' %>
+          </a>-->
           <!--<a href="/blog/edit" class="list-group-item">-->
           <%= link_to edit_blog_path, :class => "list-group-item" do %>
             <i class="fa fa-gears fa-fw"></i>
