@@ -12,12 +12,12 @@ class LikeController < ApplicationController
         if cl
           @votable = cl.find_by_id(params[:id])
           if @votable
-            begin
+            #begin
               voter = User.find_by_email("default@votable.com")
               @votable.liked_by voter, :duplicate => true
-            rescue
-                @error ="err_cant_like"
-            end
+            #rescue
+            #    @error ="err_cant_like"
+            #end
           else
             @error = "err_no_obj"
           end
@@ -41,12 +41,12 @@ class LikeController < ApplicationController
         if cl
           @votable = cl.find_by_id(params[:id])
           if @votable
-            begin
+            #begin
               voter = User.find_by_email("default@votable.com")
               @votable.unliked_by voter, :duplicate => true
-            rescue
-              @error ="err_cant_unlike"
-            end
+            #rescue
+             # @error ="err_cant_unlike"
+            #end
           else
             @error = "err_no_obj"
           end
