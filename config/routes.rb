@@ -2,8 +2,8 @@ Rails.application.routes.draw do
 
   resources :mail_messages
 
-  post 'like/:model_name/:id' => 'like#new', :as => :like_path
-  delete 'like/:model_name/:id' => 'like#destroy', :as => :unlike_path
+  post 'like/:model_name/:id' => 'like#new', :as => :like_post
+  delete 'like/:model_name/:id' => 'like#destroy', :as => :unlike_post
 
 
   get 'comments_index' => 'comment#index', :as => :comments
