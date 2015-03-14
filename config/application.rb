@@ -20,6 +20,7 @@ module Acm
     config.assets.precompile += Ckeditor.assets
     config.assets.precompile += %w( ckeditor/* )	
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    config.action_controller.relative_url_root = "/acm"
     #config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
   end
 end
