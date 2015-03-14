@@ -2,7 +2,7 @@ fa:
   logout: "خروج"
   write_new_post: "نوشتن پست جدید"
   edit_groups: "تنظیمات گروه‌ها"
-  all_comments: "همه‌ی نظرات <i class='fa fa-comments fa-fw'></i>"
+  all_comments: "همه‌ی نظرات"
   new_mail: "ارسال نامه"
   attachments: "پیوست‌ها"
   change_blog_settings: "تغییر تنظیمات بلاگ"
