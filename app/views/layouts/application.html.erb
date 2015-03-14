@@ -63,10 +63,11 @@
             <i class="fa fa-send fa-fw"></i>
             <%= t 'new_mail' %>
           </a>
-          <a href="/blog/edit" class="list-group-item">
-            <i class="fa fa-gears fa-fw"></i>
-            <%= t 'change_blog_settings' %>
-          </a>
+          <!--<a href="/blog/edit" class="list-group-item">-->
+          <%= link_to 'change_blog_settings' controller: "blogs" action: "edit" class: "fa fa-gears fa-fw" %>
+            <!--<i class="fa fa-gears fa-fw"></i>-->
+            <!--<%= t 'change_blog_settings' %>-->
+          <!--</a>-->
         </div>
     <% end %>
 
