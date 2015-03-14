@@ -55,10 +55,11 @@
             <i class="fa fa-file fa-fw"></i>
             <%= t 'attachments' %>
           </a>
-          <%= link_to content_tag(:i ,:class=>'fa fa-comments fa-fw')+t('all_comments'),{:controller=>"comment", :action=>"index"} , {:class => "list-group-item"}%>
+          <i class="fa fa-comments fa-fw">
+          <%= link_to t('all_comments'),{:controller=>"comment", :action=>"index"} , {:class => "list-group-item"}%></i>
           <%#end%>
           <!--<a href="/comments_index" class="list-group-item">
-            <i class="fa fa-comments fa-fw"></i>
+            
             <%= t 'all_comments' %>
           </a>-->
           <%= link_to new_mail_message_path, :class => "list-group-item" do %>
