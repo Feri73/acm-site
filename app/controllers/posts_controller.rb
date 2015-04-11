@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.order('publishDate DESC').limit(10)
     if params.has_key?(:english)
-      @eng= (params[:english]==1)
+      @eng= (params[:english]=="1")
     else
       @eng=false
     end
@@ -19,7 +19,7 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     if params.has_key?(:english)
-      @eng= (params[:english]==1)
+      @eng= (params[:english]=="1")
     else
       @eng=false
     end
