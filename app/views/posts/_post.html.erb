@@ -5,7 +5,11 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span></button>
         <div class="title ">
-          <%= post.title %>
+          <%if @eng %>
+            <%= post.englishTitle %>
+          <%else%>
+            <%= post.title %>
+          <%end%>
         </div>
         <div class="date">
           <%= post.publishDate.to_jalali.strftime("%d %B").persian_cleanup %> &middot; <%= post.category.name %>
@@ -16,7 +20,11 @@
       </div>
       <div class="modal-footer">
         <% if summary %>
+          <%if @eng %>
+            <%= raw post.englishSummary %>
+          <%else %>
             <%= raw post.summary %>
+          <%end%>
         <% end %>
       </div>
     </div>
@@ -37,7 +45,11 @@
     <div class="content-colorbar"></div>
     <div class="pad">
       <div class="title ">
-        <%= post.title %>
+        <%if @eng %>
+            <%= post.englishTitle %>
+          <%else%>
+            <%= post.title %>
+          <%end%>
       </div>
       <div class="date">
         <%= post.publishDate.to_jalali.strftime("%d %B").persian_cleanup %> &middot; <%= post.category.name %>
@@ -48,14 +60,22 @@
     <div class="text">
       <% if summary %>
           <div class="pad">
+            <%if @eng %>
+            <%= raw post.englishSummary %>
+          <%else %>
             <%= raw post.summary %>
+          <%end%>
             <div class="more">
               <%= link_to I18n.t('more'), post %>
             </div>
           </div>
       <% else %>
           <div class="pad">
+            <%if @eng %>
+            <%= raw post.englishText %>
+          <%else %>
             <%= raw post.text %>
+          <%end%>
           </div>
           <hr>
       <% end %>

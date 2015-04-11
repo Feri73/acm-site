@@ -5,11 +5,21 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.order('publishDate DESC').limit(10)
+    if params.has_key(:english)
+      @eng= (params[:englsih]==1)
+    else
+      @eng=false
+    end
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
+    if params.has_key(:english)
+      @eng= (params[:englsih]==1)
+    else
+      @eng=false
+    end
   end
 
   # GET /posts/new
@@ -74,6 +84,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :summary, :text, :tags, :publishDate, :category_id, :image_url)
+      params.require(:post).permit(:title, :summary, :text, :tags, :publishDate, :category_id, :image_url,:englishTitle, :englishSummary, :englishText)
     end
 end

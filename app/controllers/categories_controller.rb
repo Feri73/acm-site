@@ -12,6 +12,12 @@ class CategoriesController < ApplicationController
   # GET /categories/1.json
   def show
     @posts = Post.where(:category => @category).order(:publishDate).reverse()
+    @categories = Category.all
+    if params.has_key(:english)
+      @eng= (params[:englsih]==1)
+    else
+      @eng=false
+    end
   end
 
   # GET /categories/new
