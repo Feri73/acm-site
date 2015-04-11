@@ -10,7 +10,9 @@ class PostsController < ApplicationController
     else
       @eng=false
     end
-    logger.info "ASDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",params.has_key?(:english),params[:englsih]
+    logger.info "ASDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD"
+    logger.info params.has_key?(:english)
+    logger.info params[:englsih]
   end
 
   # GET /posts/1
