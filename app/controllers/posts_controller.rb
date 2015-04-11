@@ -10,6 +10,7 @@ class PostsController < ApplicationController
     else
       @eng=false
     end
+    puts "ASDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",params.has_key?(:english),params[:englsih]
   end
 
   # GET /posts/1
