@@ -7,7 +7,7 @@ class CategoriesController < ApplicationController
   def index
     @categories = Category.all
     if params.has_key?(:english)
-      @eng= (params[:englsih]==1)
+      @eng= (params[:english]==1)
     else
       @eng=false
     end
@@ -19,7 +19,7 @@ class CategoriesController < ApplicationController
     @posts = Post.where(:category => @category).order(:publishDate).reverse()
     @categories = Category.all
     if params.has_key?(:english)
-      @eng= (params[:englsih]==1)
+      @eng= (params[:english]==1)
     else
       @eng=false
     end
