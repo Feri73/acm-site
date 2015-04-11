@@ -5,13 +5,12 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.order('publishDate DESC').limit(10)
-    puts "ASDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD"
     if params.has_key?(:english)
       @eng= (params[:englsih]==1)
     else
       @eng=false
     end
-    puts "ASDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",params.has_key?(:english),params[:englsih]
+    logger.info "ASDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",params.has_key?(:english),params[:englsih]
   end
 
   # GET /posts/1
