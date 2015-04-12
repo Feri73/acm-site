@@ -29,6 +29,10 @@ class ApplicationController < ActionController::Base
 
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
+    if cookies.has_key?(:local) && cookies[:local]
+      I18n.locale = :en
+      @eng=true
+    end
   end
   def set_admin_mode
     puts "SSSSSSSSSSSSSSSSSSSSSSSSSS"
