@@ -28,9 +28,13 @@ class ApplicationController < ActionController::Base
   end
 
   def set_locale
+    if params.has_key?(:lang)
+      cookies[:locale]=params[:lang]
+    end
     I18n.locale = params[:locale] || I18n.default_locale
-    if cookies.has_key?(:local) && cookies[:local]
-      I18n.locale = :en
+    if cookies.has_key?(:locale)
+      I18n.locale = :en if cookies[:locale]=="en"
+      I18n.locale = :fa if cookies[:locale]=="fa"
       @eng=true
     end
   end
