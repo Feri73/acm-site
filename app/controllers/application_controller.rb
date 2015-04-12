@@ -35,7 +35,7 @@ class ApplicationController < ActionController::Base
     if cookies.has_key?(:locale)
       I18n.locale = :en if cookies[:locale]=="en"
       I18n.locale = :fa if cookies[:locale]=="fa"
-      @eng=true
+      @eng=I18n.locale==:en
     end
   end
   def set_admin_mode
