@@ -38,3 +38,13 @@ en:
   post_deleted: "Post was successfully destroyed."
   profile_created: "Profile was successfully created."
   profile_updated: "Profile was successfully updated."
+
+  profile_settings: "Profile Setting"
+  main_page: "Home Page"
+  f1_magazine: "F1 Magazine"
+  officers: "Officers"
+  about_chapter: "About"
+  alumni_site: "Alumni Website"
+  events: "Events"
+  virtual_course_selection_guide_site: "Vahed Website (course selection guide)"
+  twitter: "Twitter"

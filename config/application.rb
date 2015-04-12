@@ -17,6 +17,10 @@ module Acm
   class Application < Rails::Application
     config.time_zone = 'Tehran'
     config.i18n.default_locale = :fa
+    if cookies.has_key?(:local) && cookies[:local]
+    	config.i18n.default_locale = :en
+    	@eng=true
+    end
     config.assets.precompile += Ckeditor.assets
     config.assets.precompile += %w( ckeditor/* )	
     config.assets.paths << Rails.root.join("app", "assets", "fonts")

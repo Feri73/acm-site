@@ -6,11 +6,11 @@ class CategoriesController < ApplicationController
   # GET /categories.json
   def index
     @categories = Category.all
-    if params.has_key?(:english)
-      @eng= (params[:english]=="1")
-    else
-      @eng=false
-    end
+    # if params.has_key?(:english)
+    #   @eng= (params[:english]=="1")
+    # else
+    #   @eng=false
+    # end
   end
 
   # GET /categories/1
@@ -18,11 +18,11 @@ class CategoriesController < ApplicationController
   def show
     @posts = Post.where(:category => @category).order(:publishDate).reverse()
     @categories = Category.all
-    if params.has_key?(:english)
-      @eng= (params[:english]=="1")
-    else
-      @eng=false
-    end
+    # if params.has_key?(:english)
+    #   @eng= (params[:english]=="1")
+    # else
+    #   @eng=false
+    # end
   end
 
   # GET /categories/new

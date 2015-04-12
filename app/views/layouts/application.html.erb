@@ -85,7 +85,7 @@
           <% if current_user.profile %>
               <%= link_to edit_profile_path(current_user.profile), :class => "list-group-item" do %>
                   <i class="fa fa-cog fa-fw"></i>
-                  تنظیم نمایه
+                    <%= t 'profile_settings' %>
               <% end %>
           <% end %>
 
@@ -108,20 +108,20 @@
 
       <a href="/" class="list-group-item">
         <i class="fa fa-home fa-fw"></i>
-        صفحه‌ی اصلی
+        <%= t main_page %>
       </a>
       <%= link_to magazines_path, :class => "list-group-item" do %>
           <i class="fa fa-book fa-fw"></i>
-          مجله‌ی اف‌یک
+          <%= t f1_magazine %>
       <% end %>
 
       <a href="<%= show_flat_path(:name=>'officers') %>" class="list-group-item">
         <i class="fa fa-group fa-fw"></i>
-        گردانندگان
+        <%= t officers %>
       </a>
       <a href="<%= show_flat_path(:name=>'about') %>" class="list-group-item">
         <i class="fa fa-info-circle fa-fw"></i>
-        درباره‌ی شاخه
+        <%= t about_chapter %>
       </a>
 
 
@@ -137,19 +137,19 @@
 
   <div class="list-group">
     <a href="http://ece.ut.ac.ir" class="list-group-item">
-      <i class="fa fa-university fa-fw"></i> سایت دانشکده
+      <i class="fa fa-university fa-fw"></i> <%= t alumni_site %>
     </a>
     <a href="http://acm.ut.ac.ir/events" class="list-group-item">
-      <i class="fa fa-calendar-o fa-fw"></i> رویداد ها
+      <i class="fa fa-calendar-o fa-fw"></i> <%= t events %>
     </a>
     <a href="http://acm.ut.ac.ir/vahed" class="list-group-item">
-      <i class="fa fa-pencil-square-o fa-fw"></i> راهنمای انتخاب واحد مجازی
+      <i class="fa fa-pencil-square-o fa-fw"></i><%= t virtual_course_selection_guide_site %>
     </a>
   </div>
 
   <div class="list-group">
     <a href="https://twitter.com/UTACM1" class="list-group-item">
-      <i class="fa fa-twitter fa-fw"></i> توییتر
+      <i class="fa fa-twitter fa-fw"></i> <% t twitter %>
     </a>
   </div>
 
