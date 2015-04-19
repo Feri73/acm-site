@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
   # GET /categories
@@ -27,6 +27,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories/new
   def new
+    authorize_user
     @category = Category.new
   end
 
