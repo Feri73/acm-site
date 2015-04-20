@@ -19,8 +19,8 @@ fa:
   profile_created: "پروفایل با موفقیت ساخته‌شد."
   profile_updated: "پروفایل با موفقیت بروز شد."
 
-  last: "قبلی"
-  next: "بعدی"
+  last_page: "قبلی"
+  next_page: "بعدی"
 
   profile_settings: "تنظیم نمایه"
   main_page: "صفحه‌ی اصلی"

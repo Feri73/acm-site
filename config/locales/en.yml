@@ -39,8 +39,8 @@ en:
   profile_created: "Profile was successfully created."
   profile_updated: "Profile was successfully updated."
 
-  last: "Last"
-  next: "Next"
+  last_page: "Last"
+  next_page: "Next"
 
   profile_settings: "Profile Setting"
   main_page: "Home Page"
