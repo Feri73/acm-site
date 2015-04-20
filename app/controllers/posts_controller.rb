@@ -5,8 +5,10 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     # @posts = Post.order('publishDate DESC').limit(10)
-    first=(params[:first].to_i ||= 0) 
-    last=(params[:last].to_i ||= 10)
+    first=(params[:first] ||= "0") 
+    last=(params[:last] ||= "10")
+    first=first.to_i
+    last=last.to_i
     logger.info "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
     logger.info first
     logger.info last 
