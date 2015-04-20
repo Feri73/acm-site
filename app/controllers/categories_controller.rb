@@ -16,8 +16,8 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
-    first=(params[:first] ? params[:first].to_i : 0) 
-    last=(params[:last] ? params[:last].to_i : 10) 
+    @first=(params[:first] ? params[:first].to_i : 0) 
+    @last=(params[:last] ? params[:last].to_i : 10) 
     @posts = Post.where(:category => @category).order(:publishDate).reverse().to_a[(first..last)]
     # @posts = Post.all.order(:publishDate).reverse()
     @categories = Category.all
