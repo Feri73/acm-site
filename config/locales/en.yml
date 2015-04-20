@@ -39,6 +39,9 @@ en:
   profile_created: "Profile was successfully created."
   profile_updated: "Profile was successfully updated."
 
+  last: "Last"
+  next: "Next"
+
   profile_settings: "Profile Setting"
   main_page: "Home Page"
   f1_magazine: "F1 Magazine"
