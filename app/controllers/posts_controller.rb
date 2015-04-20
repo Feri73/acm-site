@@ -4,7 +4,8 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.order('publishDate DESC').limit(10)
+    # @posts = Post.order('publishDate DESC').limit(10)
+    @posts = Post.all(first..last).order(:publishDate).reverse()
     # if params.has_key?(:english)
     #   @eng= (params[:english]=="1")
     # else

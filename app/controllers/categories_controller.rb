@@ -16,7 +16,9 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
-    @posts = Post.where(:category => @category).order(:publishDate).reverse()
+    first=(params[:first].to_i ||= 0) 
+    last=(params[:last].to_i ||= 10) 
+    @posts = Post.where(:category => @category).all(first..last).order(:publishDate).reverse()
     @categories = Category.all
     # if params.has_key?(:english)
     #   @eng= (params[:english]=="1")
