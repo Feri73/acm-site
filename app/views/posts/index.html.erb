@@ -2,9 +2,11 @@
   <div class="col-md-10 col-md-offset-1 col-sm-8 col-sm-offset-2 col-xs-12">
     <!--<div class="blog-name">< %= Blog.last.name %></div>-->
     <!--<div class="blog-desc">< %= Blog.last.desc %></div>-->
+    <% if @posts %>
       <% @posts.each do |post| %>
           <%= render 'posts/post', post: post, summary: true %>
       <% end %>
+     <%end%>
   </div>
   <a href="?first=<%=@first-11%>&amp;last=<%=@first-1%>">&lt;</a>
   <a href="?first=<%=@last+1%>&amp;last=<%=@last+11%>">&gt;</a>

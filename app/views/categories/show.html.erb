@@ -1,8 +1,10 @@
 <div class="content">
   <div class="text-<%= I18n.locale.to_s %> post-wrp">
+    <% if @posts %>
     <% @posts.each do |post| %>
         <%= render 'posts/post', post: post, summary: true %>
     <% end %>
+    <%end%>
 
     <% if current_user and current_user.is_admin? %>
         <div class="post-padded-container">
