@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     # @posts = Post.order('publishDate DESC').limit(10)
     first=(params[:first].to_i ||= 0) 
     last=(params[:last].to_i ||= 10) 
-    @posts = Post.order(:publishDate).reverse().to_a[(first..last)]
+    @posts = Post.order(:publishDate).reverse().to_a[first..last]
     # if params.has_key?(:english)
     #   @eng= (params[:english]=="1")
     # else
