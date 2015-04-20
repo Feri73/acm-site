@@ -6,7 +6,7 @@
       <% if current_user and current_user.is_admin? %>
           <div class="post-more">
 
-            <%= link_to I18n.t('destory'), post_path(:id=>@post.id), :class => 'btn btn-default',:method => :delete %>
+            <%= link_to I18n.t('destory'), @post, method: :delete, :class => 'btn btn-danger', data: { confirm: 'Are you sure?' } %>
             <%= link_to I18n.t('cancel'), posts_path, :class => 'btn btn-default' %>
             <%= link_to I18n.t('edit'), edit_post_path(@post), :class => 'btn btn-primary ' %>
           </div>
