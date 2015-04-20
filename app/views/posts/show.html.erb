@@ -5,6 +5,8 @@
 
       <% if current_user and current_user.is_admin? %>
           <div class="post-more">
+
+            <%= link_to I18n.t('destroy'), posts_delete, :class => 'btn btn-default' %>
             <%= link_to I18n.t('cancel'), posts_path, :class => 'btn btn-default' %>
             <%= link_to I18n.t('edit'), edit_post_path(@post), :class => 'btn btn-primary ' %>
           </div>
